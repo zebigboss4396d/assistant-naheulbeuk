@@ -45,7 +45,7 @@ export const jobs=[
  J('Bourgeois / Noble',{INT:10,CHA:11},{},{at:7,prd:9,note:'Deuxième tirage de fortune ; maison et cheval. Métier définitif.'}),
  J('Guerrier / Gladiateur',{FOR:12,COU:12},{},{evPlus:5,note:'EV +5 ; +1 en AT ou PRD. Peut échanger 1 point entre AT et PRD. Limite de PR de l’origine +1 ; coup spécial hérité au choix.'}),
  J('Ingénieur',{AD:11},{},{note:'Retirer 1 en AT ou PRD et l’ajouter en INT ou AD ; PR d’armure 3.'}),
- J('Mage / Sorcier',{INT:12},{},{magic:true,ea:30,note:'EV 20 pour l’Humain ; sinon EV de l’origine −30 % (arrondi à confirmer). PR d’armure 2 ; charge 10 kg.'}),
+ J('Mage / Sorcier',{INT:12},{},{magic:true,ea:30,note:'EV 20 pour l’Humain ; sinon EV de l’origine −30 %, arrondie au supérieur. PR d’armure 2 ; charge 10 kg.'}),
  J('Marchand',{INT:12,CHA:11},{},{note:'Retirer 1 en AT ou PRD et l’ajouter en INT ou CHA ; PR d’armure 3. Maison, charrette et cheval.'}),
  J('Ménestrel',{AD:11,CHA:12},{},{note:'PR d’armure 2 ; instrument de départ (300 PO maximum).'}),
  J('Paladin',{COU:12,INT:10,CHA:11,FOR:9},{},{magic:true,ea:10,note:'EV 32 pour l’Humain ; sinon EV de l’origine +2 ; affiliation divine à préciser ensuite.'}),
@@ -65,9 +65,14 @@ export function compatible(origin,job){
  if(['Barbare','Orque','Gobelin','Ogre','Demi-Orque','Homme-bête'].includes(origin.name))return false;
  return true;
 }
+export function derivedValues(stats){return {
+ magphys:Math.ceil((stats.INT+stats.AD)/2),
+ magpsy:Math.ceil((stats.INT+stats.CHA)/2),
+ resmag:Math.ceil((stats.COU+stats.INT+stats.FOR)/3)
+};}
 export function startValues(stats,origin,job){
  let at=job?.at??origin.at??8,prd=job?.prd??origin.prd??10,ev=origin.ev,ea=job?.ea??origin.ea??null;
- if(job?.name==='Mage / Sorcier')ev=origin.name==='Humain'?20:ev*.7;
+ if(job?.name==='Mage / Sorcier')ev=origin.name==='Humain'?20:Math.ceil(ev*.7);
  else if(job?.name==='Paladin')ev=origin.name==='Humain'?32:ev+2;
  else if(job?.evPlus)ev+=job.evPlus;
  let adChoice=null;
