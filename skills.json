@@ -402,7 +402,6 @@
     "born": [
       "AMBIDEXTRIE",
       "DÉPLACEMENT SILENCIEUX",
-      "ESQUIVE",
       "FRAPPER LÂCHEMENT",
       "TIRER CORRECTEMENT"
     ],
@@ -776,7 +775,7 @@
     "choices": [
       "Appel des renforts",
       "Chercher des noises",
-      "Chevauchée",
+      "Chevaucher",
       "Détecter",
       "Érudition",
       "Fariboles",
@@ -791,7 +790,7 @@
     "born": [
       "Appel du tonneau",
       "Attire les monstres",
-      "Chevauchée",
+      "Chevaucher",
       "Cuistot",
       "Fumeur d’herbe à pipe",
       "Instinct de survie",
@@ -854,6 +853,30 @@
     ],
     "choices": [
       "Toute compétence optionnelle sauf Appel du sauvage, Chef de groupe et Chercher des noises"
+    ]
+  },
+  "Gnome des forêts du Nord": {
+    "born": [
+      "AGILE",
+      "AMBIDEXTRIE",
+      "APPEL DES RENFORTS",
+      "CHEVAUCHER",
+      "CHOURAVER",
+      "DÉPLACEMENT SILENCIEUX",
+      "INSTINCT DU TRÉSOR",
+      "SUPER ESQUIVE"
+    ],
+    "choices": [
+      "Comprendre les animaux",
+      "Connaissances de la nature",
+      "Désamorcer",
+      "Détecter",
+      "Escalader",
+      "Jonglage et danse",
+      "Mendier et pleurnicher",
+      "Nager",
+      "Serrurier",
+      "Tirer correctement"
     ]
   }
 }

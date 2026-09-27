@@ -1,14 +1,9 @@
 # Assistant de création de personnage Naheulbeuk
 
-Ce dossier contient une page web statique. Aucune installation ni abonnement n'est nécessaire pour l'héberger sur GitHub Pages. Les cinq fichiers utilisés par le site (`index.html`, `styles.css`, `app.js`, `data.js`, `skills.json`) doivent rester ensemble à la racine du dépôt. Le fichier `.nojekyll` évite la transformation des fichiers par Jekyll.
+Ce dossier contient le site statique à publier sur GitHub Pages. Les fichiers `index.html`, `styles.css`, `app.js`, `data.js`, `skills.json`, `skill-hints.json` et `fond-brainstorming-personnage-naheulbeuk.png` doivent rester ensemble à la racine du dépôt. `.nojekyll` empêche GitHub de transformer les fichiers.
 
-## Mise en ligne depuis le navigateur
+## Mettre à jour le site déjà publié
 
-1. Connectez-vous à GitHub et ouvrez https://github.com/new.
-2. Donnez au dépôt le nom `assistant-naheulbeuk`. Choisissez **Public**, puis cliquez sur **Create repository**.
-3. Dans le nouveau dépôt, cliquez sur **uploading an existing file** (ou **Add file > Upload files**).
-4. Décompressez l'archive reçue et déposez les fichiers de ce dossier dans la zone d'envoi. Vérifiez que `index.html` est à la racine et validez avec **Commit changes**.
-5. Ouvrez **Settings > Pages**. Dans **Build and deployment**, sélectionnez **Deploy from a branch**, branche **main**, dossier **/(root)**, puis **Save**.
-6. Le lien apparaîtra dans **Settings > Pages**. Il prendra la forme `https://VOTRE-PSEUDO.github.io/assistant-naheulbeuk/`.
+Ouvrez le dépôt `zebigboss4396d/assistant-naheulbeuk` sur GitHub. Après avoir décompressé l’archive, remplacez les fichiers du dépôt portant les mêmes noms et ajoutez ceux qui manquent, puis validez les modifications. GitHub Pages publie automatiquement la nouvelle version à l’adresse `https://zebigboss4396d.github.io/assistant-naheulbeuk/`. Si Chrome traduit les noms de fichiers, affichez la page dans sa langue d’origine pour vérifier `data.js` et `skill-hints.json`.
 
-Les visiteurs n'ont besoin ni d'un compte GitHub ni d'un compte ChatGPT. Le dépôt public laisse aussi les fichiers du site visibles, sans les PDF de règles fournis pour sa conception.
+Ce site démarre à partir de cinq résultats de dés saisis dans l’ordre COU, INT, CHA, AD, FOR. Les sources PDF ont servi à établir les règles mais ne sont pas incluses dans l’archive.
