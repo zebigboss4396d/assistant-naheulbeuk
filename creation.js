@@ -159,5 +159,6 @@ if(!origin||!validStats||stored.job&&!job){
    const v=val();sessionStorage.setItem('naheul-character',JSON.stringify({name:draft.name.trim(),sex:draft.sex,origin:origin.name,job:job?.name||null,stats:v.stats,at:v.at,prd:v.prd,ev:v.ev,ea:v.ea,gold:Number(draft.gold),destiny:Number(draft.destiny),skills:selectedNames(),affiliation:needsMagic(job)?draft.magic:needsDeity(job)?draft.deity:'',affiliationNote:needsMagic(job)?MAGIC_DISCIPLINES.find(x=>x.name===draft.magic)?.description||'':needsDeity(job)?(DIVINE_DETAILS[`${job.name}:${draft.deity}`]||[]).join(' · '):'',creationNotes:[origin.note,job?.note].filter(Boolean),allocation:stored.label||'',choices:draft.choices}));location.href='equipement.html';
   }
  });
+ $('#preview-toggle').addEventListener('click',()=>{const open=$('.wizard-layout').classList.toggle('preview-open');$('#preview-toggle').setAttribute('aria-expanded',String(open));$('#preview-toggle').textContent=open?'Masquer la pré-fiche ↑':'Afficher la pré-fiche du personnage ↓';if(open)$('#wizard-preview').scrollIntoView({behavior:'smooth',block:'start'});});
  render();
 }
