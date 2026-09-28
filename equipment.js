@@ -6,7 +6,10 @@ const rareProfiles=['Semi-homme de la Loi','Mage culinaire hobbit','Paladin semi
 if(!profile||!Number.isInteger(profile.gold)||profile.gold<0){root.innerHTML='<div class="wizard-card"><p>Aucun personnage validé avec une fortune de départ. Terminez d’abord la page 2.</p><a class="primary continue-link" href="creation.html">Aller à la pré-fiche</a></div>';}
 else init().catch(()=>root.innerHTML='<div class="wizard-card equipment-error">Impossible de charger le catalogue. Vérifiez que le fichier equipment-catalog.json est publié avec la page.</div>');
 async function init(){
- const response=await fetch('./equipment-catalog.json');if(!response.ok)throw new Error('Catalogue indisponible');const catalog=await response.json();
+ const response=await fetch('./equipment-catalog.json');if(!response.ok)throw new Error('Catalogue indisponible');
+ const allItems=await response.json();
+ const lastArrow=allItems.findIndex(item=>item.category==='Divers'&&item.section==='Munitions'&&item.name==='Flèche Noire des Drows');
+ const catalog=allItems.filter((item,index)=>!(lastArrow>=0&&index>lastArrow&&item.category==='Divers'&&item.section==='Munitions'&&/^Flèche\b/i.test(item.name)));
  const byId=new Map(catalog.map(item=>[item.id,item]));
  const signature=JSON.stringify([profile.name,profile.origin,profile.job,profile.gold,profile.stats]);
  const stored=JSON.parse(sessionStorage.getItem('naheul-equipment')||'null');
