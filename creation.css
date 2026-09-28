@@ -16,3 +16,11 @@
   .wizard-field input,.wizard-field select,.equipment-search{font-size:16px}
 }
 @media(max-width:520px){.wizard-card,.wizard-preview{padding:16px 13px}.wizard-nav{padding:12px 14px}.wizard-preview .value-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Tirage de la variante Homme-bête avant les autres questions. */
+.beast-roll{display:flex;align-items:center;gap:14px;margin:18px 0}
+.beast-die{width:76px;height:76px;border:2px solid #9b6642;border-radius:14px;background:#fff9ea;color:#57331f;font:700 2.5rem Georgia,serif;box-shadow:0 5px 0 #b79976;flex:none}
+.beast-roll-button{min-height:48px;padding:12px 17px;border:0;border-radius:9px;background:#70432b;color:#fff8eb;font-weight:750}
+.beast-versions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:8px 0 18px;padding-left:27px;color:#573920}
+.beast-versions li{padding:5px 0}
+@media(max-width:520px){.beast-roll{gap:10px}.beast-die{width:66px;height:66px;font-size:2rem}.beast-roll-button{flex:1}.beast-versions{grid-template-columns:1fr}}

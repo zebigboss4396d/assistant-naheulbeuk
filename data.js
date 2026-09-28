@@ -61,8 +61,9 @@ export function isEligible(stats,entry){return ORDER.every(k=>(entry.min[k]===un
 export function compatible(origin,job){
  if(job.name==='Bourreau'&&origin.name==='Gnome des forêts du Nord')return false;
  if(!job.magic)return true;
- if(job.name==='Mage / Sorcier'&&['Barbare','Nain','Orque','Gobelin','Ogre','Gnome des forêts du Nord','Demi-Orque','Homme-bête'].includes(origin.name))return false;
- if(['Barbare','Orque','Gobelin','Ogre','Demi-Orque','Homme-bête'].includes(origin.name))return false;
+ const type=origin.beastDelta?'Homme-bête':origin.name;
+ if(job.name==='Mage / Sorcier'&&['Barbare','Nain','Orque','Gobelin','Ogre','Gnome des forêts du Nord','Demi-Orque','Homme-bête'].includes(type))return false;
+ if(['Barbare','Orque','Gobelin','Ogre','Demi-Orque','Homme-bête'].includes(type))return false;
  return true;
 }
 export function derivedValues(stats){return {
